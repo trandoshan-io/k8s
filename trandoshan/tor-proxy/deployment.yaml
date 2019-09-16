@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tor-proxy-deployment
+  namespace: trandoshan-io
+  labels:
+    app: tor-proxy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tor-proxy
+  template:
+    metadata:
+      labels:
+        app: tor-proxy
+    spec:
+      containers:
+      - name: tor-proxy
+        image: osminogin/tor-simple
+        ports:
+        - containerPort: 9050

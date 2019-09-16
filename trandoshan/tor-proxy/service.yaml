@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tor-proxy-service
+  namespace: trandoshan-io
+spec:
+  selector:
+    app: tor-proxy
+  ports:
+    - protocol: TCP
+      port: 9050
+      targetPort: 9050

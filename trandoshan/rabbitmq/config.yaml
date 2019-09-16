@@ -1,0 +1,6 @@
+rabbitmq:
+  loadDefinition:
+    enabled: true
+    secretName: trandoshan-io/rabbitmq-load-definition
+  extraConfiguration: |-
+    management.load_definitions: /app/definitions.json
