@@ -8,7 +8,7 @@ kubectl apply -f trandoshan/tor-proxy/deployment.yaml
 kubectl apply -f trandoshan/tor-proxy/service.yaml
 
 # Install NATS using helm
-
+helm install --namespace trandoshan-io --name messaging-system -f trandoshan/nats-config.yaml stable/nats
 
 # Install dashboard
 #kubectl apply -f dashboard.yaml
