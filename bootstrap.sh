@@ -7,9 +7,8 @@ kubectl apply -f trandoshan/namespace.yaml
 kubectl apply -f trandoshan/tor-proxy/deployment.yaml
 kubectl apply -f trandoshan/tor-proxy/service.yaml
 
-# Install RabbitMQ using helm
-kubectl apply -f trandoshan/rabbitmq/definitions.yaml
-helm install --namespace trandoshan-io --name rabbitmq -f trandoshan/rabbitmq/config.yaml stable/rabbitmq
+# Install NATS using helm
+
 
 # Install dashboard
 #kubectl apply -f dashboard.yaml
