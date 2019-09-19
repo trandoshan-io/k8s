@@ -1,1 +1,4 @@
-replicaCount: 2
+replicaCount: 1
+auth.enabled: true
+auth.user: trandoshan
+auth.password: trandoshanPwd$
