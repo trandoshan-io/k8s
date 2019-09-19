@@ -7,8 +7,30 @@ kubectl apply -f trandoshan/namespace.yaml
 kubectl apply -f trandoshan/tor-proxy/deployment.yaml
 kubectl apply -f trandoshan/tor-proxy/service.yaml
 
+# Install helm on the cluster
+helm init
+
+# Wait for tiller to be up
+sleep 5
+
 # Install NATS using helm
 helm install --namespace trandoshan-io --name messaging-system -f trandoshan/nats-config.yaml stable/nats
+
+# Install MongoDB using helm
+helm install --namespace trandoshan-io --name database -f trandoshan/mongodb-config.yaml stable/mongodb
+
+# Install API
+kubectl apply -f trandoshan/api/deployment.yaml
+kubectl apply -f trandoshan/api/service.yaml
+
+# Install Crawler
+kubectl apply -f trandoshan/crawler/deployment.yaml
+
+# Install Persister
+kubectl apply -f trandoshan/persister/deployment.yaml
+
+# Install Scheduler
+kubectl apply -f trandoshan/scheduler/deployment.yaml
 
 # Install dashboard
 #kubectl apply -f dashboard.yaml

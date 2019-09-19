@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: persister-deployment
+  namespace: trandoshan-io
+  labels:
+    app: persister
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: persister
+  template:
+    metadata:
+      labels:
+        app: persister
+    spec:
+      containers:
+      - name: persister
+        image: trandoshanio/persister
