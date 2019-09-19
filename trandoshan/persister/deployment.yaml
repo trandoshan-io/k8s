@@ -18,3 +18,8 @@ spec:
       containers:
       - name: persister
         image: trandoshanio/persister
+        env:
+          - name: MONGO_URI
+            value: mongodb://trandoshan:changeme$@database-mongodb:27017/trandoshan
+          - name: NATS_URI
+            value: nats://trandoshan:trandoshanPwd$@messaging-system-nats-client:4222
