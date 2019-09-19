@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-ui-deployment
+  namespace: trandoshan-io
+  labels:
+    app: mongo-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-ui
+  template:
+    metadata:
+      labels:
+        app: mongo-ui
+    spec:
+      containers:
+      - name: mongo-ui
+        image: mongo-express
+        env:
+          - name: ME_CONFIG_MONGODB_SERVER
+            value: database-mongodb
+          - name: ME_CONFIG_MONGODB_ENABLE_ADMIN
+            value: "false"
+          - name: ME_CONFIG_MONGODB_AUTH_DATABASE
+            value: trandoshan
+          - name: ME_CONFIG_MONGODB_AUTH_USERNAME
+            value: trandoshan
+          - name: ME_CONFIG_MONGODB_AUTH_PASSWORD
+            value: changeme$
+        ports:
+        - containerPort: 8081
