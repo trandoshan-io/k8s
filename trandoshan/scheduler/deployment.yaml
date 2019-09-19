@@ -18,3 +18,8 @@ spec:
       containers:
       - name: scheduler
         image: trandoshanio/scheduler
+        env:
+          - name: API_URI
+            value: http://api-service:8080
+          - name: NATS_URI
+            value: nats://trandoshan:trandoshanPwd$@messaging-system-nats-client:4222
