@@ -18,3 +18,8 @@ spec:
       containers:
       - name: crawler
         image: trandoshanio/crawler
+        env:
+        - name: TOR_PROXY
+          value: tor-proxy-service:9050
+        - name: NATS_URI
+          value: nats://trandoshan:trandoshanPwd$@messaging-system-nats-client:4222
