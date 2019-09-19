@@ -18,5 +18,8 @@ spec:
       containers:
       - name: api
         image: trandoshanio/api
+        env:
+        - name: MONGO_URI
+          value: mongodb://trandoshan:changeme$@database-mongodb:27017/trandoshan
         ports:
         - containerPort: 8080
