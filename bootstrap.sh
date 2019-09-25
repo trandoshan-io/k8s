@@ -32,6 +32,9 @@ kubectl apply -f trandoshan/persister/deployment.yaml
 # Install Scheduler
 kubectl apply -f trandoshan/scheduler/deployment.yaml
 
+# Finally send initial crawling url by deploying feeder job
+kubectl apply -f trandoshan/feeder/job.yaml
+
 # Install dashboard
 #kubectl apply -f dashboard.yaml
 #kubectl apply -f dashboard-user.yaml

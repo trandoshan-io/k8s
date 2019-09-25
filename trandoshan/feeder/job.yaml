@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: feeder-job
+  namespace: trandoshan-io
+spec:
+  template:
+    spec:
+      containers:
+      - name: feeder
+        image: trandoshanio/feeder
+        env:
+        - name: NATS_URI
+          value: nats://trandoshan:trandoshanPwd$@messaging-system-nats-client:4222
+        - name: INITIAL_URI
+          value: choose_here
+      restartPolicy: Never
