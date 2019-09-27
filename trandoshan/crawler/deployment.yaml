@@ -23,3 +23,5 @@ spec:
           value: tor-proxy-service:9050
         - name: NATS_URI
           value: nats://trandoshan:trandoshanPwd$@messaging-system-nats-client:4222
+        - name: FORBIDDEN_CONTENT_TYPES
+          value: application/octet-stream
