@@ -25,3 +25,5 @@ spec:
           value: nats://trandoshan:trandoshanPwd$@messaging-system-nats-client:4222
         - name: FORBIDDEN_CONTENT_TYPES
           value: application/octet-stream
+        - name: USER_AGENT
+          value: trandoshan-io/crawler
