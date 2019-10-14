@@ -23,3 +23,12 @@ spec:
             value: mongodb://trandoshan:changeme$@database-mongodb:27017/trandoshan
           - name: NATS_URI
             value: nats://trandoshan:trandoshanPwd$@messaging-system-nats-client:4222
+          - name: STORAGE_PATH
+            value: /resources
+          volumeMounts:
+          - mountPath: /resources
+            name: resources
+      volumes:
+      - name: resources
+        persistentVolumeClaim:
+          claimName: trandoshan-io-resources
